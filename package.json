@@ -1,6 +1,6 @@
 {
   "name": "wat2wasm",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "WASM/JS clone of wabt's wat2wasm",
   "main": "index.js",
   "bin": {
