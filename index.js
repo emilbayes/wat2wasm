@@ -47,6 +47,7 @@ libwabt().then(wabt => {
   if (fileName === '-') {
     fileStream = process.stdin
     fileName = 'stdin'
+    filePath = fileName
   } else {
     try {
       filePath = path.isAbsolute(fileName) ? fileName : path.join(process.cwd(), fileName)
