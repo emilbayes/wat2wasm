@@ -1,0 +1,28 @@
+{
+  "name": "wat2wasm",
+  "version": "0.0.0",
+  "description": "WASM/JS clone of wabt's wat2wasm",
+  "main": "index.js",
+  "bin": {
+    "wat2wasm": "index.js"
+  },
+  "dependencies": {
+    "concat-stream": "^1.6.2",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index test.wat"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emilbayes/wat2wasm.git"
+  },
+  "keywords": [],
+  "author": "Emil Bay <github@tixz.dk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilbayes/wat2wasm/issues"
+  },
+  "homepage": "https://github.com/emilbayes/wat2wasm#readme"
+}
