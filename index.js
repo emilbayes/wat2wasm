@@ -74,7 +74,10 @@ libwabt().then(wabt => {
       write_debug_names: args['debug-names']
     })
 
-    if (args['d']) process.stdout.write(binary.log)
+    if (args['d']) {
+      process.stdout.write(binary.log)
+      return
+    }
 
     if (args.o === '-') return process.stdout.write(binary.buffer)
     if (args.o) return fs.writeFileSync(args.o, binary.buffer)
