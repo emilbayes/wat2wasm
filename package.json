@@ -15,8 +15,8 @@
   },
   "scripts": {
     "test": "node index test.wat",
-    "check-wabdt": "node check-libwabt.js",
-    "update-wabdt": "node update-libwabt.js"
+    "check": "node check-libwabt.js",
+    "update": "node update-libwabt.js"
   },
   "repository": {
     "type": "git",
