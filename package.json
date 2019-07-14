@@ -11,12 +11,20 @@
     "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "tape": "^4.11.0",
+    "wasm2js": "^0.2.0"
   },
   "scripts": {
-    "test": "node index test.wat",
+    "test": "standard && node index test.wat && wasm2js test.wasm -o test-wasm.js && tape test.js",
     "check": "node check-libwabt.js",
     "update": "node update-libwabt.js"
+  },
+  "standard": {
+    "ignore": [
+      "libwabt.js",
+      "test-wasm.js"
+    ]
   },
   "repository": {
     "type": "git",
