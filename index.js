@@ -3,9 +3,13 @@ const libwabt = require('./libwabt.js')
 const fs = require('fs')
 const path = require('path')
 const concat = require('concat-stream')
+
 const args = require('minimist')(process.argv.slice(2), {
   boolean: ['d', 'h'],
   string: ['o', 'f'],
+  default: {
+    f: ''
+  },
   alias: {
     d: 'dump-module',
     f: 'features',
