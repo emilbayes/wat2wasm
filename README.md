@@ -24,9 +24,25 @@ $ cat test.wat | wat2wasm - -output=- > test.wasm
 
 options:
 -h, --help                                  Print this help message
+-f, --features                              Comma separated list of feature flags to enable
 -d, --dump-module                           Print a hexdump of the module to stdout
 -o, --output=FILE                           output wasm binary file
     --debug-names                           Write debug names to the generated binary file
+```
+
+Features include:
+
+```
+exceptions
+mutable_globals
+sat_float_to_int
+sign_extension
+simd
+threads
+multi_value
+tail_call
+bulk_memory
+reference_types
 ```
 
 ## Install
