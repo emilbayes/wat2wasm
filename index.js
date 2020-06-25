@@ -5,11 +5,12 @@ const path = require('path')
 const concat = require('concat-stream')
 const args = require('minimist')(process.argv.slice(2), {
   boolean: ['d', 'h'],
-  string: ['o'],
+  string: ['o', 'f'],
   alias: {
-    'd': 'dump-module',
-    'o': 'output',
-    'h': 'help'
+    d: 'dump-module',
+    f: 'features',
+    o: 'output',
+    h: 'help'
   }
 })
 
@@ -33,6 +34,7 @@ if (args.h) {
 
   options:
   -h, --help                                  Print this help message
+  -f, --features                              Comma separated list of feature flags to enable
   -d, --dump-module                           Print a hexdump of the module to stdout
   -o, --output=FILE                           output wasm binary file
       --debug-names                           Write debug names to the generated binary file`)
@@ -40,7 +42,10 @@ if (args.h) {
 }
 
 libwabt().then(wabt => {
-  const features = {}
+  const features = args.f.split(',').reduce((o, f) => {
+    o[f] = true
+    return o
+  }, {})
   var fileName = args._[0]
   var fileStream
   var filePath
@@ -74,7 +79,7 @@ libwabt().then(wabt => {
       write_debug_names: args['debug-names']
     })
 
-    if (args['d']) {
+    if (args.d) {
       process.stdout.write(binary.log)
       return
     }
