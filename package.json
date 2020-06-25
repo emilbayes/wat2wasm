@@ -12,6 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "fetch-libwabt": "curl -L -O https://github.com/WebAssembly/wabt/raw/master/docs/demo/libwabt.js",
     "test": "node index test.wat"
   },
   "repository": {
